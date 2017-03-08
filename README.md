@@ -1,1 +1,1 @@
-# Course Homepage
+# XGBoost Project Homepage
