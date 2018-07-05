@@ -1,13 +1,13 @@
 ---
 layout: post
 title: "Updates to the XGBoost GPU algorithms"
-date:   2018-6-29
+date:   2018-7-4
 author: Rory Mitchell
 categories:
 comments: true
 ---
 
-It has been one and a half years since [our last article](http://dmlc.ml/2016/12/14/GPU-accelerated-xgboost.html) announcing the first ever GPU accelerated gradient boosting algorithm. GPU algorithms in XGBoost have been in continuous development over this time, adding new features, faster algorithms (much much faster), and improvements to usability. This blog post accompanies the paper [XGBoost: Scalable GPU Accelerated Learning](http://arxiv.org/abs/1806.11248) [\[1\]](#references) and describes some of these improvements.
+It has been one and a half years since [our last article](https://xgboost.ai/2016/12/14/GPU-accelerated-xgboost.html) announcing the first ever GPU accelerated gradient boosting algorithm. GPU algorithms in XGBoost have been in continuous development over this time, adding new features, faster algorithms (much much faster), and improvements to usability. This blog post accompanies the paper [XGBoost: Scalable GPU Accelerated Learning](http://arxiv.org/abs/1806.11248) [\[1\]](#references) and describes some of these improvements.
 
 ### Histogram based tree construction algorithms
 Decision tree construction algorithms typically work by recursively partitioning a set of training instances into smaller and smaller subsets in feature space. These partitions are found by searching over the training instances to find a decision rule that optimises for the training objective. While still effectively linear time these algorithms are slow because searching for the decision rule at the current level requires passing over every training instance. The algorithm can be made considerably faster through discretization of the input features.
