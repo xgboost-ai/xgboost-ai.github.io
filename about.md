@@ -35,8 +35,8 @@ preds = bst.predict(dtest)
 
 ```r
 # load data
-data(agaricus.train, package='xgboost')
-data(agaricus.test, package='xgboost')
+data(agaricus.train, package = 'xgboost')
+data(agaricus.test, package = 'xgboost')
 train <- agaricus.train
 test <- agaricus.test
 # fit model
