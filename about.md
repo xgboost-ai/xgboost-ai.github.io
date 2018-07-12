@@ -34,6 +34,7 @@ preds = bst.predict(dtest)
 ## R
 
 ```r
+library(xgboost)
 # load data
 data(agaricus.train, package = 'xgboost')
 data(agaricus.test, package = 'xgboost')
