@@ -11,11 +11,14 @@ body {
 
 .container {
   width: 970px;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 #banner-container {
   width: 100%;
-  height: 600px;
   margin-top: -4px;
   background-repeat: no-repeat;
   background-position: center;
@@ -26,7 +29,7 @@ body {
 
 #banner-title  {
   margin: auto;
-  padding: 10% 0px;
+  padding: 5% 0px;
   width: 70%;
 }
 
@@ -60,6 +63,10 @@ body {
 }
 .span14 {
   width: 970px;
+}
+
+#banner-social {
+  text-align: center;
 }
 
 
@@ -408,4 +415,73 @@ body {
 }
 .highlight {
   background-color: #f8f8f8;
+}
+
+.section-tout{
+  padding:3em 0 3em;
+  border-bottom:1px solid rgba(0,0,0,.05);
+  background-color:#eaf1f1
+}
+.section-tout .fa{
+  margin-right:.5em
+}
+
+.section-tout h3{
+  font-size:20px;
+}
+
+.section-tout p {
+  margin-bottom:2em
+}
+
+.github-btn { border: 0; overflow: hidden }
+
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+
+.row {
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
+.col-lg-4, .col-sm-6 {
+  position: relative;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+@media (min-width: 768px) {
+  .col-sm-6 {
+    float: left;
+    width: 50%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .col-lg-4 {
+    float: left;
+    width: 33.33333333%;
+  }
+}
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
