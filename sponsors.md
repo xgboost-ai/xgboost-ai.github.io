@@ -21,5 +21,5 @@ Help us fund a robust CI infrastructure. Become a sponsor and get a logo in this
 
 ## Current sponsors
 
-![Amazon Web Services](./images/sponsors/aws_logo.png "Amazon Web Services")
-
+[![Amazon Web Services](./images/sponsors/aws.png "Amazon Web Services")](https://aws.amazon.com/)
+[![NVIDIA](./images/sponsors/nvidia.jpg "NVIDIA")](https://www.nvidia.com/en-us/)
