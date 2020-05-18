@@ -87,7 +87,7 @@ dtrain = xgb.DMatrix(boston.data, boston.target)
 xgb.train(params, dtrain, evals=[(dtrain, "train")])
 
 # sklearn API example
-gbm = xgb.XGBRegressor(silent=False, n_estimators=10, tree_method='gpu_hist')
+gbm = xgb.XGBRegressor(n_estimators=10, tree_method='gpu_hist')
 gbm.fit(boston.data, boston.target, eval_set=[(boston.data, boston.target)])
 ```
 
