@@ -76,7 +76,6 @@ After preparing the data, we can train our model:
 val params = new mutable.HashMap[String, Any]()
 params += "eta" -> 1.0
 params += "max_depth" -> 2
-params += "silent" -> 1
 params += "objective" -> "binary:logistic"
 
 val watches = new mutable.HashMap[String, DMatrix]
