@@ -46,7 +46,7 @@ We use the Github issue tracker for bug reports and roadmap discussion.
 As a community project, we welcome contributions!
 The package is developed and used by the community.
 
-<a href="https://github.com/dmlc/xgboost/blob/master/doc/contribute.rst" class="link-btn">XGBoost Contributor Guideline</a>
+<a href="https://xgboost.readthedocs.io/en/latest/contrib/index.html" class="link-btn">XGBoost Contributor Guideline</a>
 
 <br>
 
