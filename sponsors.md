@@ -17,4 +17,4 @@ Help us fund a robust CI infrastructure. Become a sponsor and get a logo in this
 * Cash: [Donate monthly on Open Source Collective](https://opencollective.com/xgboost)
 * Cloud hours: E-mail admin@xgboost-ci.net for details
 
-See https://github.com/dmlc/xgboost for the current list of sponsors.
+See [https://github.com/dmlc/xgboost](https://github.com/dmlc/xgboost) to see the current list of sponsors.
