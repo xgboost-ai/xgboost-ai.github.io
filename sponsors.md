@@ -17,9 +17,4 @@ Help us fund a robust CI infrastructure. Become a sponsor and get a logo in this
 * Cash: [Donate monthly on Open Source Collective](https://opencollective.com/xgboost)
 * Cloud hours: E-mail admin@xgboost-ci.net for details
 
-[Proposed by-laws for sponsorship](https://docs.google.com/document/d/1REQH8UHCLZ5rePsTpQIaSIaI5s9DVFcjWarXvEgQdro/edit?usp=sharing)
-
-## Current sponsors
-
-[![Amazon Web Services](./images/sponsors/aws.png "Amazon Web Services")](https://aws.amazon.com/)
-[![NVIDIA](./images/sponsors/nvidia.jpg "NVIDIA")](https://www.nvidia.com/en-us/)
+See https://github.com/dmlc/xgboost for the current list of sponsors.
