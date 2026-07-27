@@ -11,7 +11,8 @@ We are pleased to announce XGBoost 3.3.0. This release adds expectile regression
 enables categorical feature support by default, expands SHAP support for
 vector-leaf multi-output trees, and includes a broad set of performance and
 scalability improvements across CPU, GPU, distributed training, Python, JVM, and
-the build system.
+the build system. In particular, GPU quantile sketching uses significantly less
+memory for training.
 
 XGBoost 3.3.0 is available from the usual package channels. The complete release
 notes are available in the
@@ -19,8 +20,8 @@ notes are available in the
 and release artifacts are available on
 [GitHub](https://github.com/dmlc/xgboost/releases/tag/v3.3.0).
 
-<p style="text-align: center;">
-  <img src="/images/blog/xgboost-3-3-larger-datasets.png" alt="Train even larger datasets with XGBoost 3.3" style="max-width: 520px; width: 100%; height: auto;">
+<p>
+  <img src="/images/blog/xgboost-3-3-larger-datasets.png" alt="Train even larger datasets with XGBoost 3.3" style="display: block; max-width: 480px; width: 100%; height: auto; margin: 0 auto;">
 </p>
 
 ## Faster quantile sketching and distributed training
@@ -41,20 +42,22 @@ worker port when deploying distributed jobs.
 
 ## Expectile regression
 
-This release adds expectile regression through the new `reg:expectileerror`
-objective, the `expectile` metric, and the `expectile_alpha` parameter. Expectile
-regression is useful when users want an asymmetric squared-loss analogue of
-quantile regression. It gives a smooth objective for estimating different parts
-of the conditional response distribution, while retaining a squared-error style
-penalty.
+This release adds expectile regression, giving practitioners another tool for
+risk-sensitive forecasting, uncertainty-aware modeling, and applications where
+overprediction and underprediction carry different costs. It is available
+through the new `reg:expectileerror` objective, the `expectile` metric, and the
+`expectile_alpha` parameter.
+
+Expectile regression is useful when users want an asymmetric squared-loss
+analogue of quantile regression. It gives a smooth objective for estimating
+different parts of the conditional response distribution, while retaining a
+squared-error style penalty.
 
 Multiple expectiles are supported, allowing users to train models for several
 asymmetric targets in a single configuration. Unlike quantile regression,
 expectile curves do not suffer from crossing, which makes them easier to use
 when estimating multiple levels of the response distribution together. This
-complements XGBoost's existing regression objectives and gives practitioners
-another tool for risk-sensitive forecasting, uncertainty-aware modeling, and
-applications where overprediction and underprediction carry different costs.
+complements XGBoost's existing regression objectives.
 
 ## Categorical features are on by default
 
@@ -130,9 +133,8 @@ pipelines support columnar input, Java packages include automatic module names,
 and `xgboost4j` supports FreeBSD.
 
 On the build and platform side, XGBoost 3.3.0 adds support for Visual Studio
-2026, updates CUDA Toolkit support, keeps pace with recent RAPIDS releases, and
-fixes a number of CMake, macOS, and packaging issues. Linux packaging now uses a
-versioned shared object.
+2026, updates CUDA Toolkit support, and fixes a number of CMake, macOS, and
+packaging issues. Linux packaging now uses a versioned shared object.
 
 ## Deprecation notice
 
