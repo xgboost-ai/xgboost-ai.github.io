@@ -88,7 +88,7 @@ single-output models. With this release, multi-output workflows gain a more
 complete explanation story.
 
 The TreeSHAP implementation has also been updated for improved numerical
-stability and faster execution with `QuadratureTreeSHAP`.
+stability and faster execution with `QuadratureTreeSHAP` [\[1\]](#references).
 
 ## CPU and GPU performance improvements
 
@@ -161,6 +161,10 @@ Please see the
 platform-specific instructions, and the
 [3.3.0 release notes](https://xgboost.readthedocs.io/en/latest/changes/v3.3.0.html)
 for the full list of changes.
+
+## References
+
+[1] Wettenstein R, Mitchell R, Yu P. (2026) Quadrature-TreeSHAP: Depth-Independent TreeSHAP and Shapley Interactions. [arXiv:2605.04497](https://arxiv.org/abs/2605.04497).
 
 Many thanks to everyone who contributed code, reviews, testing, documentation,
 bug reports, and release work for XGBoost 3.3.0.
