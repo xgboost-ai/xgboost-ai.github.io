@@ -139,8 +139,16 @@ packaging issues. Linux packaging now uses a versioned shared object.
 ## Deprecation notice
 
 The `gblinear` booster is deprecated in XGBoost 3.3.0 and will be removed in a
-future release. Users relying on `gblinear` should start planning migrations to
-other estimators or workflows.
+future release. The linear model feature in XGBoost has been a niche feature and
+has not been as actively maintained as the tree algorithms. It also does not
+support or align with many capabilities in modern XGBoost, such as categorical
+splits, interaction constraints, monotone constraints, and TreeSHAP-style
+explanations.
+
+XGBoost is primarily a decision tree library, and we have decided to focus
+development on the tree algorithms and on keeping the interface consistent for
+the features users rely on most. Users relying on `gblinear` should start
+planning migrations to other estimators or workflows.
 
 ## Upgrade
 
