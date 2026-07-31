@@ -25,6 +25,22 @@ description: "XGBoost"
     </p>
   </div>
 </div>
+<div class="container" style="padding: 35px 0 15px 0;">
+  <h2>Latest from the XGBoost Blog</h2>
+  <ul class="bloglist">
+  {% for post in site.posts limit:3 %}
+    <li>
+      <span>
+        <a class="post-link" href="{{ post.url | prepend: site.baseurl }}.html">{{ post.title }}</a>
+      </span>
+      </br>
+      <span>
+        {{ post.date | date: "%b %-d, %Y" }}
+      </span>
+    </li>
+  {% endfor %}
+  </ul>
+</div>
 <div class="section-tout">
   <div class="container">
     <div class="row">
