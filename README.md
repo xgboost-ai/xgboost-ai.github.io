@@ -4,7 +4,7 @@ This site uses the GitHub Pages-supported [Minima theme](https://github.com/jeky
 
 ## Run locally
 
-Install Ruby and Bundler, then run:
+After installing Ruby and Bundler, run:
 
 ```bash
 bundle install

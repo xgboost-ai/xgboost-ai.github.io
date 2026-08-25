@@ -1,19 +1,73 @@
 ---
-layout: home
+layout: default
 title: XGBoost
-list_title: Latest from the XGBoost Blog
+description: Scalable and flexible gradient boosting
 ---
 
-Scalable and flexible gradient boosting. XGBoost is an optimized distributed
-machine learning library designed for efficient, portable model training.
+<section class="home-hero" aria-labelledby="home-hero-title">
+  <div class="home-section-inner home-hero__inner">
+    <h1 id="home-hero-title">Scalable and Flexible Gradient Boosting</h1>
+    <div class="home-hero__social" aria-label="XGBoost GitHub activity">
+      <iframe
+        src="https://ghbtns.com/github-btn.html?user=dmlc&amp;repo=xgboost&amp;type=star&amp;count=true&amp;v=2"
+        title="Star XGBoost on GitHub"
+        width="120"
+        height="20"
+      ></iframe>
+      <iframe
+        src="https://ghbtns.com/github-btn.html?user=dmlc&amp;repo=xgboost&amp;type=fork&amp;count=true&amp;v=2"
+        title="Fork XGBoost on GitHub"
+        width="100"
+        height="20"
+      ></iframe>
+    </div>
+    <a class="home-hero__button" href="{{ '/about' | relative_url }}">Get Started</a>
+  </div>
+</section>
 
-[Get Started]({{ "/about" | relative_url }})
+<section class="home-latest" aria-labelledby="home-latest-title">
+  <div class="home-section-inner">
+    <h2 id="home-latest-title">Latest from the XGBoost Blog</h2>
+    <ul class="post-list home-post-list">
+      {% for post in site.posts limit:3 %}
+      <li>
+        <h3>
+          <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+        </h3>
+        <time class="post-meta" datetime="{{ post.date | date_to_xmlschema }}">
+          {{ post.date | date: site.minima.date_format }}
+        </time>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
 
-## Why XGBoost?
-
-- **Flexible.** Supports regression, classification, ranking, and user-defined objectives.
-- **Portable.** Runs on Windows, Linux, macOS, and major cloud platforms.
-- **Multiple languages.** Supports C++, Python, R, Java, Scala, and Julia.
-- **Battle-tested.** Used in production and in data science and machine learning challenges.
-- **Distributed.** Trains across multiple machines and integrates with systems including Spark and Flink.
-- **Fast.** Its optimized backend makes efficient use of available compute resources.
+<section class="home-features" aria-label="XGBoost capabilities">
+  <div class="home-section-inner home-feature-grid">
+    <article class="home-feature">
+      <h2><span class="home-feature__icon" aria-hidden="true">&#8644;</span> Flexible</h2>
+      <p>Supports regression, classification, ranking, and user-defined objectives.</p>
+    </article>
+    <article class="home-feature">
+      <h2><span class="home-feature__icon" aria-hidden="true">&#9670;</span> Portable</h2>
+      <p>Runs on Windows, Linux, and macOS, as well as major cloud platforms.</p>
+    </article>
+    <article class="home-feature">
+      <h2><span class="home-feature__icon" aria-hidden="true">&lt;/&gt;</span> Multiple Languages</h2>
+      <p>Supports multiple languages including C++, Python, R, Java, Scala, and Julia.</p>
+    </article>
+    <article class="home-feature">
+      <h2><span class="home-feature__icon" aria-hidden="true">&#10003;</span> Battle-tested</h2>
+      <p>Wins many data science and machine learning challenges and is used in production by multiple companies.</p>
+    </article>
+    <article class="home-feature">
+      <h2><span class="home-feature__icon" aria-hidden="true">&#9729;</span> Distributed on Cloud</h2>
+      <p>Supports distributed training across multiple machines and integrates with systems including Spark and Flink.</p>
+    </article>
+    <article class="home-feature">
+      <h2><span class="home-feature__icon" aria-hidden="true">&#8593;</span> Performance</h2>
+      <p>Its optimized backend delivers strong performance with limited resources and scales beyond billions of examples.</p>
+    </article>
+  </div>
+</section>
