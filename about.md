@@ -1,14 +1,9 @@
 ---
 layout: page
-title: "About"
-order : 12
-group : navigation
+title: About XGBoost
+nav_title: About
 description: "XGBoost"
 ---
-{% include JB/setup %}
-
-# About XGBoost
-
 XGBoost is an optimized distributed gradient boosting library designed to be highly ***efficient***, ***flexible*** and ***portable***.
 It implements machine learning algorithms under the [Gradient Boosting](https://en.wikipedia.org/wiki/Gradient_boosting) framework.
 XGBoost provides a parallel tree boosting (also known as GBDT, GBM) that solve many data science problems in a fast and accurate way.

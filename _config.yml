@@ -1,32 +1,35 @@
-# This is the default format.
-# For more see: http://jekyllrb.com/docs/permalinks/
+title: XGBoost
+description: Scalable and flexible gradient boosting
+author: XGBoost Contributors
+url: https://xgboost.ai
+baseurl: ""
+
+theme: minima
 permalink: /:categories/:year/:month/:day/:title
-
-exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md"]
-
 highlighter: rouge
 markdown: kramdown
 
+header_pages:
+  - community.md
+  - about.md
+  - blog.html
+  - sponsors.md
 
-# Themes are encouraged to use these universal variables
-# so be sure to set them if your theme uses them.
-#
-title :  "XGBoost"
-tagline:
-author :
-  name :
+minima:
+  date_format: "%b %-d, %Y"
 
-#
-production_url : https://xgboost.ai
+github_username: dmlc
+twitter_username: XGBoostProject
+show_excerpts: false
 
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
 
-# All Jekyll-Bootstrap specific configurations are namespaced into this hash
-#
-JB :
-  version : 0.3.0
-
-  BASE_PATH : https://xgboost.ai
-  BLOG_PATH : https://xgboost.ai
-
-  sharing :
-    provider : false
+exclude:
+  - .rvmrc
+  - .rbenv-version
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - changelog.md

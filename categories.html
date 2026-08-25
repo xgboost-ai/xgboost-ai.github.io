@@ -1,20 +1,18 @@
 ---
 layout: page
-title: Categories
-header: Posts By Category
+title: Posts by Category
 ---
-{% include JB/setup %}
-
-<ul class="taxonomy-list">
-  {% assign categories_list = site.categories %}
-  {% include JB/categories_list %}
+<ul>
+{% for category in site.categories %}
+  <li><a href="#{{ category[0] | slugify }}-ref">{{ category[0] }}</a> ({{ category[1].size }})</li>
+{% endfor %}
 </ul>
 
-
 {% for category in site.categories %}
-  <h2 id="{{ category[0] }}-ref">{{ category[0] | join: "/" }}</h2>
+  <h2 id="{{ category[0] | slugify }}-ref">{{ category[0] }}</h2>
   <ul>
-    {% assign pages_list = category[1] %}
-    {% include JB/pages_list %}
+  {% for post in category[1] %}
+    <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a> <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span></li>
+  {% endfor %}
   </ul>
 {% endfor %}

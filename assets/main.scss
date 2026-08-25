@@ -1,0 +1,23 @@
+---
+---
+@import "minima";
+
+.site-title img {
+  max-height: 44px;
+  height: auto;
+  width: 100px;
+}
+
+iframe {
+  max-width: 100%;
+}
+
+.post-content {
+  overflow-wrap: anywhere;
+}
+
+.post-content table {
+  display: block;
+  max-width: 100%;
+  overflow-x: auto;
+}

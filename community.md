@@ -1,16 +1,8 @@
 ---
 layout: page
-title : Community
-header : Community
-order : 10
-group : navigation
+title: Community
 description: "XGBoost Community"
 ---
-
-{% include JB/setup %}
-
-# Community
-
 Welcome to the XGBoost community. Here are several ways that you can stay involved.
 
 <br>
