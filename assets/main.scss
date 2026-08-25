@@ -1,5 +1,7 @@
 ---
 ---
+$wide-content-width: 1170px;
+
 @import "minima";
 
 .site-header {
@@ -17,7 +19,7 @@
 
 .site-header > .wrapper {
   box-sizing: border-box;
-  max-width: 1170px;
+  max-width: $wide-content-width;
   padding-left: $spacing-unit / 2;
   padding-right: $spacing-unit / 2;
 }
@@ -78,7 +80,7 @@ iframe {
 .home-section-inner {
   box-sizing: border-box;
   margin: 0 auto;
-  max-width: 1170px;
+  max-width: $wide-content-width;
   padding-left: $spacing-unit / 2;
   padding-right: $spacing-unit / 2;
 }
