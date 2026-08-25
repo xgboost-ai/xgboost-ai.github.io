@@ -5,75 +5,64 @@ order : 0
 description: "XGBoost"
 ---
 {% include JB/setup %}
-<div id="banner-container">
-  <div id="banner-title">
-    <p>
-      Scalable and Flexible Gradient Boosting
-    </p>
-    <div id="banner-subtitle">
+<section class="hero">
+  <div class="container hero__inner">
+    <h1>Scalable and Flexible Gradient Boosting</h1>
+    <div class="hero__social">
+      <iframe src="https://ghbtns.com/github-btn.html?user=dmlc&amp;repo=xgboost&amp;type=star&amp;count=true&amp;v=2"
+              title="Star XGBoost on GitHub" width="120" height="20"></iframe>
+      <iframe src="https://ghbtns.com/github-btn.html?user=dmlc&amp;repo=xgboost&amp;type=fork&amp;count=true&amp;v=2"
+              title="Fork XGBoost on GitHub" width="100" height="20"></iframe>
     </div>
-    <div id="banner-social">
-      <span>
-        <iframe src="https://ghbtns.com/github-btn.html?user=dmlc&repo=xgboost&type=star&count=true&v=2"
-                frameborder="0" scrolling="0" width="120px" height="20px"></iframe>
-        <iframe src="https://ghbtns.com/github-btn.html?user=dmlc&repo=xgboost&type=fork&count=true&v=2"
-                frameborder="0" scrolling="0" width="100px" height="20px"></iframe>
-      </span>
-    </div>
-    <p>
-      <a href="/about" class="link-btn" id="banner-btn">Get Started</a>
-    </p>
+    <a href="/about" class="link-btn hero__button">Get Started</a>
   </div>
-</div>
-<div class="container" style="padding: 35px 0 15px 0;">
-  <h2>Latest from the XGBoost Blog</h2>
-  <ul class="bloglist">
-  {% for post in site.posts limit:3 %}
-    <li>
-      <span>
+</section>
+<section class="latest-posts" aria-labelledby="latest-posts-heading">
+  <div class="container latest-posts__inner">
+    <h2 id="latest-posts-heading">Latest from the XGBoost Blog</h2>
+    <ul class="blog-list">
+    {% for post in site.posts limit:3 %}
+      <li class="blog-list__item">
         <a class="post-link" href="{{ post.url | prepend: site.baseurl }}.html">{{ post.title }}</a>
-      </span>
-      </br>
-      <span>
-        {{ post.date | date: "%b %-d, %Y" }}
-      </span>
-    </li>
-  {% endfor %}
-  </ul>
-</div>
-<div class="section-tout">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-4 col-sm-6">
-        <h3><i class="fa fa-flag"></i> Flexible</h3>
-        <p>Supports regression, classification, ranking and user defined objectives.
+        <time datetime="{{ post.date | date_to_xmlschema }}">
+          {{ post.date | date: "%b %-d, %Y" }}
+        </time>
+      </li>
+    {% endfor %}
+    </ul>
+  </div>
+</section>
+<section class="features" aria-label="XGBoost capabilities">
+  <div class="container feature-grid">
+      <article class="feature">
+        <h2><span class="feature__icon" aria-hidden="true">&#8644;</span> Flexible</h2>
+        <p>Supports regression, classification, ranking and user-defined objectives.
         </p>
-      </div>
-      <div class="col-lg-4 col-sm-6">
-        <h3><i class="fa fa-cube"></i> Portable</h3>
-        <p>Runs on Windows, Linux and OS X, as well as various cloud Platforms</p>
-      </div>
-      <div class="col-lg-4 col-sm-6">
-        <h3><i class="fa fa-wrench"></i>Multiple Languages</h3>
+      </article>
+      <article class="feature">
+        <h2><span class="feature__icon" aria-hidden="true">&#9670;</span> Portable</h2>
+        <p>Runs on Windows, Linux and macOS, as well as various cloud platforms.</p>
+      </article>
+      <article class="feature">
+        <h2><span class="feature__icon" aria-hidden="true">&lt;/&gt;</span> Multiple Languages</h2>
         <p>Supports multiple languages including C++, Python, R, Java, Scala, Julia.</p>
-      </div>
-      <div class="col-lg-4 col-sm-6">
-        <h3><i class="fa fa-cogs"></i> Battle-tested</h3>
+      </article>
+      <article class="feature">
+        <h2><span class="feature__icon" aria-hidden="true">&#10003;</span> Battle-tested</h2>
         <p>Wins many data science and machine learning challenges.
           Used in production by multiple companies.
         </p>
-      </div>
-      <div class="col-lg-4 col-sm-6">
-        <h3><i class="fa fa-cloud"></i>Distributed on Cloud</h3>
+      </article>
+      <article class="feature">
+        <h2><span class="feature__icon" aria-hidden="true">&#9729;</span> Distributed on Cloud</h2>
         <p>Supports distributed training on multiple machines, including AWS,
           GCE, Azure, and Yarn clusters. Can be integrated with Flink, Spark and other cloud dataflow systems.</p>
-      </div>
-      <div class="col-lg-4 col-sm-6">
-        <h3><i class="fa fa-rocket"></i> Performance</h3>
+      </article>
+      <article class="feature">
+        <h2><span class="feature__icon" aria-hidden="true">&#8593;</span> Performance</h2>
         <p>The well-optimized backend system for the best performance with limited resources.
-          The distributed version solves problems beyond billions of examples with same code.
+          The distributed version solves problems beyond billions of examples with the same code.
         </p>
-      </div>
-    </div>
+      </article>
   </div>
-</div>
+</section>

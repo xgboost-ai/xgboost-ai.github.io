@@ -9,16 +9,13 @@ order : 100
 
 <h1>XGBoost Community Blog</h1>
 
-<ul class="bloglist">
+<ul class="blog-list">
 {% for post in site.posts %}
-<li>
-  <span>
-    <a class="post-link" href="{{ post.url | prepend: site.baseurl }}.html">{{ post.title }}</a>
-  </span>
-  </br>
-  <span>
+<li class="blog-list__item">
+  <a class="post-link" href="{{ post.url | prepend: site.baseurl }}.html">{{ post.title }}</a>
+  <time datetime="{{ post.date | date_to_xmlschema }}">
     {{ post.date | date: "%b %-d, %Y" }}
-  </span>
+  </time>
 </li>
 {% endfor %}
 </ul>

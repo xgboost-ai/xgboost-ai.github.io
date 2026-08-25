@@ -27,18 +27,18 @@ Usage:
   {% for node in pages_list %}
     {% if node.title != null %}
       {% if group == null or group == node.group %}
-      	{% if page.url == node.url %}
-      	<li class="active"><a href="{{ HOME_PATH }}{{node.url}}" class="active">{{node.title}}</a></li>
-      	{% else %}
-      	<li><a href="{{ HOME_PATH }}{{node.url}}">{{node.title}}</a></li>
-      	{% endif %}
+        {% if page.url == node.url %}
+        <li class="active"><a href="{{ HOME_PATH }}{{ node.url }}" class="active" aria-current="page">{{ node.title }}</a></li>
+        {% else %}
+        <li><a href="{{ HOME_PATH }}{{ node.url }}">{{ node.title }}</a></li>
+        {% endif %}
       {% endif %}
       {% if node.group == 'blog' %}
-      	{% if page.group == 'blog' %}
-      	<li class="active"><a href="{{ BLOG_PATH }}{{node.url}}.html" class="active">{{node.title}}</a></li>
-      	{% else %}
-      	<li><a href="{{ BLOG_PATH }}{{node.url}}.html">{{node.title}}</a></li>
-      	{% endif %}
+        {% if page.group == 'blog' %}
+        <li class="active"><a href="{{ BLOG_PATH }}{{ node.url }}.html" class="active" aria-current="page">{{ node.title }}</a></li>
+        {% else %}
+        <li><a href="{{ BLOG_PATH }}{{ node.url }}.html">{{ node.title }}</a></li>
+        {% endif %}
       {% endif %}
     {% endif %}
   {% endfor %}
