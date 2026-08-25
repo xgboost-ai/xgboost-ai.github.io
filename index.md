@@ -46,27 +46,45 @@ description: Scalable and flexible gradient boosting
 <section class="home-features" aria-label="XGBoost capabilities">
   <div class="home-section-inner home-feature-grid">
     <article class="home-feature">
-      <h2><span class="home-feature__icon" aria-hidden="true">&#8644;</span> Flexible</h2>
+      <h2>
+        <i class="fa fa-flag home-feature__icon" aria-hidden="true"></i>
+        Flexible
+      </h2>
       <p>Supports regression, classification, ranking, and user-defined objectives.</p>
     </article>
     <article class="home-feature">
-      <h2><span class="home-feature__icon" aria-hidden="true">&#9670;</span> Portable</h2>
+      <h2>
+        <i class="fa fa-cube home-feature__icon" aria-hidden="true"></i>
+        Portable
+      </h2>
       <p>Runs on Windows, Linux, and macOS, as well as major cloud platforms.</p>
     </article>
     <article class="home-feature">
-      <h2><span class="home-feature__icon" aria-hidden="true">&lt;/&gt;</span> Multiple Languages</h2>
+      <h2>
+        <i class="fa fa-wrench home-feature__icon" aria-hidden="true"></i>
+        Multiple Languages
+      </h2>
       <p>Supports multiple languages including C++, Python, R, Java, Scala, and Julia.</p>
     </article>
     <article class="home-feature">
-      <h2><span class="home-feature__icon" aria-hidden="true">&#10003;</span> Battle-tested</h2>
+      <h2>
+        <i class="fa fa-cogs home-feature__icon" aria-hidden="true"></i>
+        Battle-tested
+      </h2>
       <p>Wins many data science and machine learning challenges and is used in production by multiple companies.</p>
     </article>
     <article class="home-feature">
-      <h2><span class="home-feature__icon" aria-hidden="true">&#9729;</span> Distributed on Cloud</h2>
+      <h2>
+        <i class="fa fa-cloud home-feature__icon" aria-hidden="true"></i>
+        Distributed on Cloud
+      </h2>
       <p>Supports distributed training across multiple machines and integrates with systems including Spark and Flink.</p>
     </article>
     <article class="home-feature">
-      <h2><span class="home-feature__icon" aria-hidden="true">&#8593;</span> Performance</h2>
+      <h2>
+        <i class="fa fa-rocket home-feature__icon" aria-hidden="true"></i>
+        Performance
+      </h2>
       <p>Its optimized backend delivers strong performance with limited resources and scales beyond billions of examples.</p>
     </article>
   </div>

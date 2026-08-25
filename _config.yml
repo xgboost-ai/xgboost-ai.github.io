@@ -10,7 +10,6 @@ highlighter: rouge
 markdown: kramdown
 
 header_pages:
-  - community.md
   - about.md
   - blog.html
   - sponsors.md
@@ -18,7 +17,7 @@ header_pages:
 minima:
   date_format: "%b %-d, %Y"
 
-github_username: dmlc
+github_repository: dmlc/xgboost
 twitter_username: XGBoostProject
 show_excerpts: false
 
