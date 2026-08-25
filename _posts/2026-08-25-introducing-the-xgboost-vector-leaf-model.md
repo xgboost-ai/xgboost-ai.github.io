@@ -67,7 +67,7 @@ have more freedom.
 To illustrate the benefit of compatible partitions, we generated a multi-output regression
 problem with 32 normally distributed features. Every target combines those same set of
 features with different weights and a small amount of random noise. The targets therefore
-need different predictions, but they all benefit from the same basic split questions.  We
+need different predictions, but they all benefit from the same basic split questions. We
 generated `2^20` training rows and `2^18` test rows, then compared problems with 2, 4, 8,
 16, and 32 outputs. Both strategies were trained for 128 boosting rounds. This
 deliberately partition-compatible dataset is the favorable case for vector leaves.
@@ -136,14 +136,14 @@ especially as the number of classes grows. Rather than treating `multi_output_tr
 as a later optimization, it is reasonable to try it first and retain a scalar model as the
 comparison.
 
-Give the vector model a larger boosting rounds. A scalar round adds one tree for every
+Give the vector model more boosting rounds. A scalar round adds one tree for every
 class, whereas a vector round adds only one shared tree; equal round limits therefore give
 the scalar model much more tree structure. On K49 and Devnagari, the vector models
 continued improving for substantially longer and eventually became both more accurate and
 smaller than their scalar counterparts.
 
 A lower learning rate is also worth pairing with the larger round cap. XGBoost's default
-learning rate is quite large, reducing it makes each tree a smaller update and usually
+learning rate is quite large; reducing it makes each tree a smaller update and usually
 enables more boosting rounds. The smaller steps can make the shared, multidimensional
 updates easier to optimize; Dionis, for example, improved after its vector learning rate
 was reduced. Early stopping can then select the useful number of rounds without committing
