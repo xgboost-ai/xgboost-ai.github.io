@@ -84,6 +84,13 @@ body {
           box-shadow: 0 1px 2px rgba(0,0,0,.15);*/
 }
 
+.content p > img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 24px auto;
+}
+
 .link-btn {
     background-color: white;
     border: 2px solid #555555;
