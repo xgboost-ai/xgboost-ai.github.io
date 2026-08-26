@@ -125,9 +125,9 @@ result by itself.
 Some gains come with longer training. On Devnagari, the vector model uses about three
 times as many boosting rounds to train. It nevertheless finishes substantially more
 accurate and about one third the size. Letter Recognition improves both predictive quality
-and training time, while Gas Sensor Drift retains a smaller advantage across a
-chronological shift. Shared structure is an advantage when it preserves enough predictive
-flexibility.
+and training time, while Gas Sensor Drift retains a smaller advantage when trained on
+earlier sensor batches and evaluated on later ones. Shared structure is an advantage when
+it preserves enough predictive flexibility.
 
 ## A practical default for multiclass classification
 
@@ -154,9 +154,8 @@ to the full cap.
 Every real-data run used GPU histogram training and `QuantileDMatrix` with a DGX Spark.
 Validation data controlled model selection and early stopping, and test data were
 evaluated afterward. Random splits were stratified; Letter Recognition retained its
-official test partition, and Gas Sensor Drift used chronological batches. These
-experiments use one deterministic split per dataset and are comparisons of model
-representations.
+official test partition. Gas Sensor Drift used a time-ordered split because sensor
+responses change over time. All these experiments use one deterministic split per dataset.
 
 ## Summary
 
