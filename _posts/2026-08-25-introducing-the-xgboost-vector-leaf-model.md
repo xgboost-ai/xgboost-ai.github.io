@@ -14,8 +14,13 @@ expectile regression, and multi-output regression are common examples.
 
 By default, XGBoost handles these problems by building one stack of scalar-leaf trees for
 each output. The vector-leaf model offers another choice: build one shared tree whose
-leaves hold a vector of predictions. In this post, we explain the trade-off and explore it
-across a range of multiclass classification datasets.
+leaves hold a vector of predictions.
+
+Across ten real-world multiclass datasets, vector leaves generally achieved lower held-out
+loss and produced simpler models. When outputs benefit from using the same splits,
+vector-leaf models can also train and predict faster and be less susceptible to spurious
+features. In this post, we explore when shared tree structure helps and what trade-offs it
+brings.
 
 ## Getting started
 
