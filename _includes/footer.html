@@ -10,10 +10,16 @@
 
     <nav class="site-footer__links" aria-label="Project links">
       {%- if site.github_repository -%}
-        <a href="https://github.com/{{ site.github_repository | escape }}">GitHub</a>
+        <a href="https://github.com/{{ site.github_repository | escape }}">
+          <i class="fa-brands fa-github" aria-hidden="true"></i>
+          GitHub
+        </a>
       {%- endif -%}
       {%- if site.twitter_username -%}
-        <a href="https://twitter.com/{{ site.twitter_username | cgi_escape | escape }}">Twitter</a>
+        <a href="https://x.com/{{ site.twitter_username | cgi_escape | escape }}" aria-label="XGBoost on X">
+          <i class="fa-brands fa-x-twitter" aria-hidden="true"></i>
+          X
+        </a>
       {%- endif -%}
     </nav>
   </div>
