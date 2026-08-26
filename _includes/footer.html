@@ -1,0 +1,26 @@
+<footer class="site-footer h-card">
+  <data class="u-url" href="{{ '/' | relative_url }}"></data>
+
+  <div class="wrapper site-footer__inner">
+    <p class="site-footer__identity">
+      <strong class="p-name">{{ site.title | escape }}</strong>
+      <span aria-hidden="true">&middot;</span>
+      <span>{{ site.author | escape }}</span>
+    </p>
+
+    <nav class="site-footer__links" aria-label="Project links">
+      {%- if site.github_repository -%}
+        <a href="https://github.com/{{ site.github_repository | escape }}">
+          <i class="fa-brands fa-github" aria-hidden="true"></i>
+          GitHub
+        </a>
+      {%- endif -%}
+      {%- if site.twitter_username -%}
+        <a href="https://x.com/{{ site.twitter_username | cgi_escape | escape }}" aria-label="XGBoost on X">
+          <i class="fa-brands fa-x-twitter" aria-hidden="true"></i>
+          X
+        </a>
+      {%- endif -%}
+    </nav>
+  </div>
+</footer>

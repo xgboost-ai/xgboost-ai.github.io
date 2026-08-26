@@ -1,0 +1,32 @@
+<header class="site-header" role="banner">
+  <div class="wrapper">
+    {%- assign default_paths = site.pages | map: "path" -%}
+    {%- assign page_paths = site.header_pages | default: default_paths -%}
+
+    <a class="site-title" rel="author" href="{{ "/" | relative_url }}">
+      <img src="{{ "/images/logo/xgboost-logo-trimmed.png" | relative_url }}" width="100" alt="{{ site.title | escape }}">
+    </a>
+
+    {%- if page_paths -%}
+      <nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger" aria-label="Toggle navigation">
+          <span class="menu-icon">
+            <i class="fa-solid fa-bars" aria-hidden="true"></i>
+          </span>
+        </label>
+
+        <div class="trigger">
+          {%- for path in page_paths -%}
+            {%- assign my_page = site.pages | where: "path", path | first -%}
+            {%- if my_page.title -%}
+              <a class="page-link" href="{{ my_page.url | relative_url }}">{{ my_page.nav_title | default: my_page.title | escape }}</a>
+            {%- endif -%}
+          {%- endfor -%}
+          <a class="page-link" href="https://xgboost.readthedocs.io/">Docs</a>
+          <a class="page-link" href="https://github.com/{{ site.github_repository | escape }}">GitHub</a>
+        </div>
+      </nav>
+    {%- endif -%}
+  </div>
+</header>
