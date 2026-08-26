@@ -56,10 +56,10 @@ well as many separate partitions, prefer the simpler representation. It can be s
 faster to evaluate, and the shared structure can act as a useful modeling constraint,
 making the model more likely to generalize well for unseen data.
 
-Sharing is also the central constraint. Vector leaves work best when outputs benefit from
-similar features and split thresholds—a property we call *partition compatibility*. In
-multiclass classification, for example, a question about whether a region of an image
-contains ink may help distinguish several characters at once.
+The trade-off is that all outputs must use the same tree structure. This works best when
+they benefit from similar features and split thresholds—a property we call *partition
+compatibility*. In multiclass classification, for example, a question about whether a
+region of an image contains ink may help distinguish several characters at once.
 
 Partition compatibility is not the same as target correlation. Correlation says that
 target values move together; it does not say that the targets need the same decision
