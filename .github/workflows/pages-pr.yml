@@ -27,3 +27,9 @@ jobs:
         with:
           source: ./
           destination: ./_site
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v5.0.0
+        with:
+          path: ./_site
+          retention-days: 1
