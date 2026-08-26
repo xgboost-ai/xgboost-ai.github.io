@@ -78,7 +78,7 @@ description: Scalable and flexible gradient boosting
         <i class="fa-solid fa-cloud home-feature__icon" aria-hidden="true"></i>
         Distributed on Cloud
       </h2>
-      <p>Supports distributed training across multiple machines and integrates with systems including Spark and Flink.</p>
+      <p>Supports distributed training across multiple machines and integrates with systems including Spark and Dask.</p>
     </article>
     <article class="home-feature">
       <h2>
