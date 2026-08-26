@@ -148,9 +148,9 @@ continued improving for substantially longer and eventually became both more acc
 smaller than their scalar counterparts.
 
 A lower learning rate is also worth pairing with the larger round cap. XGBoost's default
-learning rate is quite large; reducing it makes each tree a smaller update and usually
+learning rate is quite large. Reducing it makes each tree a smaller update and usually
 enables more boosting rounds. The smaller steps can make the shared, multidimensional
-updates easier to optimize; Dionis, for example, improved after its vector learning rate
+updates easier to optimize. Dionis, for example, improved after its vector learning rate
 was reduced. Early stopping can then select the useful number of rounds without committing
 to the full cap.
 
