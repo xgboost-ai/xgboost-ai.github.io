@@ -2,16 +2,16 @@
 ---
 $wide-content-width: 1170px;
 
-@import "minima";
+@import "minima";		// loads minima's default CSS and variables
 
-.site-header {
+.site-header {			// Creates a dark gradient navigation bar
   background: linear-gradient(to bottom, #333, #222);
   border-bottom-color: #111;
   border-top: 0;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
 }
 
-.site-title img {
+.site-title img {		// Set the XGBoost logo size.
   max-height: 44px;
   height: auto;
   width: 100px;
