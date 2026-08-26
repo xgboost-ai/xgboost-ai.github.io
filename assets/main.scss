@@ -1,0 +1,232 @@
+---
+---
+$wide-content-width: 1170px;
+
+@import "minima";		// loads minima's default CSS and variables
+
+.site-header {			// Creates a dark gradient navigation bar
+  background: linear-gradient(to bottom, #333, #222);
+  border-bottom-color: #111;
+  border-top: 0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+}
+
+.site-title img {		// Set the XGBoost logo size.
+  max-height: 44px;
+  height: auto;
+  width: 100px;
+}
+
+.site-header > .wrapper {
+  box-sizing: border-box;
+  max-width: $wide-content-width;
+  padding-left: $spacing-unit / 2;
+  padding-right: $spacing-unit / 2;
+}
+
+.site-header .page-link,
+.site-header .page-link:visited {
+  color: #bfbfbf;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+}
+
+.site-header .page-link:hover,
+.site-header .page-link:focus {
+  color: #fff;
+  text-decoration: none;
+}
+
+@media screen and (min-width: 601px) {
+  .site-header > .wrapper {
+    align-items: center;
+    display: flex;
+  }
+
+  .site-title,
+  .site-nav {
+    float: none;
+  }
+
+  .site-nav {
+    margin-left: 20px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .site-header .site-nav {
+    background: #222;
+    border-color: #444;
+  }
+
+  .site-header .site-nav .menu-icon {
+    color: #bfbfbf;
+  }
+}
+
+iframe {
+  border: 0;
+  max-width: 100%;
+}
+
+.home-hero,
+.home-latest,
+.home-features {
+  box-sizing: border-box;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  width: 100vw;
+}
+
+.home-section-inner {
+  box-sizing: border-box;
+  margin: 0 auto;
+  max-width: $wide-content-width;
+  padding-left: $spacing-unit / 2;
+  padding-right: $spacing-unit / 2;
+}
+
+.home-hero {
+  background: linear-gradient(175deg, #7275f9, #333);
+  color: #fff;
+  margin-top: -$spacing-unit;
+  text-align: center;
+}
+
+.home-hero__inner {
+  padding-bottom: clamp(3rem, 7vw, 5rem);
+  padding-top: clamp(3rem, 7vw, 5rem);
+}
+
+.home-hero h1 {
+  color: inherit;
+  font-size: clamp(2rem, 5vw, 2.75rem);
+  font-weight: 300;
+  line-height: 1.2;
+  margin-bottom: $spacing-unit;
+}
+
+.home-hero__social {
+  align-items: center;
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  min-height: 20px;
+}
+
+.home-hero__button {
+  border: 2px solid #fff;
+  border-radius: 8px;
+  color: #fff;
+  display: inline-block;
+  font-size: 1.25rem;
+  margin-top: $spacing-unit;
+  padding: 0.5rem 2rem;
+  transition: background-color 100ms ease, color 100ms ease;
+}
+
+.home-hero__button:visited {
+  color: #fff;
+}
+
+.home-hero__button:hover,
+.home-hero__button:focus {
+  background-color: #fff;
+  color: #3e658d;
+  text-decoration: none;
+}
+
+.home-latest {
+  background-color: #fff;
+  padding-bottom: $spacing-unit / 2;
+  padding-top: $spacing-unit;
+}
+
+.home-latest h2 {
+  font-size: 1.75rem;
+}
+
+.home-post-list h3 {
+  margin-bottom: 0;
+}
+
+.home-features {
+  background-color: #eaf1f1;
+  padding-bottom: $spacing-unit;
+  padding-top: $spacing-unit;
+}
+
+.home-feature-grid {
+  display: grid;
+  gap: 0 $spacing-unit;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.home-feature {
+  margin-bottom: $spacing-unit / 2;
+}
+
+.home-feature h2 {
+  font-size: 1.25rem;
+  margin-bottom: $spacing-unit / 3;
+}
+
+.home-feature p {
+  margin-bottom: $spacing-unit / 2;
+}
+
+.home-feature__icon {
+  display: inline-block;
+  margin-right: 0.35rem;
+  min-width: 1.25em;
+  text-align: center;
+}
+
+@media (max-width: 900px) {
+  .home-feature-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .home-feature-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.site-footer__inner {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem $spacing-unit;
+  justify-content: center;
+  text-align: center;
+}
+
+.site-footer__identity {
+  color: $grey-color;
+  margin-bottom: 0;
+}
+
+.site-footer__identity strong {
+  color: $text-color;
+  font-weight: 500;
+}
+
+.site-footer__links {
+  display: flex;
+  gap: $spacing-unit / 2;
+}
+
+.site-footer__links a {
+  white-space: nowrap;
+}
+
+.post-content {
+  overflow-wrap: anywhere;
+}
+
+.post-content table {
+  display: block;
+  max-width: 100%;
+  overflow-x: auto;
+}

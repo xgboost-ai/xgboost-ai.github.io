@@ -1,24 +1,17 @@
 ---
 layout: page
-title : Blog
-header : Blogposts
-group : blog
-order : 100
+title: XGBoost Community Blog
+nav_title: Blog
 ---
-{% include JB/setup %}
-
-<h1>XGBoost Community Blog</h1>
-
-<ul class="bloglist">
+<ul class="post-list">
 {% for post in site.posts %}
 <li>
-  <span>
-    <a class="post-link" href="{{ post.url | prepend: site.baseurl }}.html">{{ post.title }}</a>
-  </span>
-  </br>
-  <span>
+  <span class="post-meta">
     {{ post.date | date: "%b %-d, %Y" }}
   </span>
+  <h3>
+    <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title }}</a>
+  </h3>
 </li>
 {% endfor %}
 </ul>

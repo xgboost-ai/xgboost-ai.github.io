@@ -14,8 +14,13 @@ expectile regression, and multi-output regression are common examples.
 
 By default, XGBoost handles these problems by building one stack of scalar-leaf trees for
 each output. The vector-leaf model offers another choice: build one shared tree whose
-leaves hold a vector of predictions. In this post, we explain the trade-off and explore it
-across a range of multiclass classification datasets.
+leaves hold a vector of predictions.
+
+Across ten real-world multiclass datasets, vector leaves generally achieved lower held-out
+loss and produced simpler models. When outputs benefit from using the same splits,
+vector-leaf models can also train and predict faster and be less susceptible to spurious
+features. In this post, we explore when shared tree structure helps and what trade-offs it
+brings.
 
 ## Getting started
 
@@ -51,10 +56,10 @@ well as many separate partitions, prefer the simpler representation. It can be s
 faster to evaluate, and the shared structure can act as a useful modeling constraint,
 making the model more likely to generalize well for unseen data.
 
-Sharing is also the central constraint. Vector leaves work best when outputs benefit from
-similar features and split thresholds—a property we call *partition compatibility*. In
-multiclass classification, for example, a question about whether a region of an image
-contains ink may help distinguish several characters at once.
+The trade-off is that all outputs must use the same tree structure. This works best when
+they benefit from similar features and split thresholds—a property we call *partition
+compatibility*. In multiclass classification, for example, a question about whether a
+region of an image contains ink may help distinguish several characters at once.
 
 Partition compatibility is not the same as target correlation. Correlation says that
 target values move together; it does not say that the targets need the same decision
@@ -125,9 +130,9 @@ result by itself.
 Some gains come with longer training. On Devnagari, the vector model uses about three
 times as many boosting rounds to train. It nevertheless finishes substantially more
 accurate and about one third the size. Letter Recognition improves both predictive quality
-and training time, while Gas Sensor Drift retains a smaller advantage across a
-chronological shift. Shared structure is an advantage when it preserves enough predictive
-flexibility.
+and training time, while Gas Sensor Drift retains a smaller advantage when trained on
+earlier sensor batches and evaluated on later ones. Shared structure is an advantage when
+it preserves enough predictive flexibility.
 
 ## A practical default for multiclass classification
 
@@ -136,16 +141,16 @@ especially as the number of classes grows. Rather than treating `multi_output_tr
 as a later optimization, it is reasonable to try it first and retain a scalar model as the
 comparison.
 
-Give the vector model more boosting rounds. A scalar round adds one tree for every
-class, whereas a vector round adds only one shared tree; equal round limits therefore give
-the scalar model much more tree structure. On K49 and Devnagari, the vector models
-continued improving for substantially longer and eventually became both more accurate and
-smaller than their scalar counterparts.
+Compared with scalar models, vector models may need more boosting rounds. Each scalar
+round adds one tree per class, whereas each vector round adds only one shared tree. An
+equal round limit therefore gives the scalar model much more tree structure. On K49 and
+Devnagari, the vector models continued improving for substantially longer and eventually
+became both more accurate and smaller than their scalar counterparts.
 
 A lower learning rate is also worth pairing with the larger round cap. XGBoost's default
-learning rate is quite large; reducing it makes each tree a smaller update and usually
+learning rate is quite large. Reducing it makes each tree a smaller update and usually
 enables more boosting rounds. The smaller steps can make the shared, multidimensional
-updates easier to optimize; Dionis, for example, improved after its vector learning rate
+updates easier to optimize. Dionis, for example, improved after its vector learning rate
 was reduced. Early stopping can then select the useful number of rounds without committing
 to the full cap.
 
@@ -154,9 +159,8 @@ to the full cap.
 Every real-data run used GPU histogram training and `QuantileDMatrix` with a DGX Spark.
 Validation data controlled model selection and early stopping, and test data were
 evaluated afterward. Random splits were stratified; Letter Recognition retained its
-official test partition, and Gas Sensor Drift used chronological batches. These
-experiments use one deterministic split per dataset and are comparisons of model
-representations.
+official test partition. Gas Sensor Drift used a time-ordered split because sensor
+responses change over time. All these experiments use one deterministic split per dataset.
 
 ## Summary
 
