@@ -141,11 +141,11 @@ especially as the number of classes grows. Rather than treating `multi_output_tr
 as a later optimization, it is reasonable to try it first and retain a scalar model as the
 comparison.
 
-Give the vector model more boosting rounds. A scalar round adds one tree for every
-class, whereas a vector round adds only one shared tree; equal round limits therefore give
-the scalar model much more tree structure. On K49 and Devnagari, the vector models
-continued improving for substantially longer and eventually became both more accurate and
-smaller than their scalar counterparts.
+Compared with scalar models, vector models may need more boosting rounds. Each scalar
+round adds one tree per class, whereas each vector round adds only one shared tree. An
+equal round limit therefore gives the scalar model much more tree structure. On K49 and
+Devnagari, the vector models continued improving for substantially longer and eventually
+became both more accurate and smaller than their scalar counterparts.
 
 A lower learning rate is also worth pairing with the larger round cap. XGBoost's default
 learning rate is quite large. Reducing it makes each tree a smaller update and usually
