@@ -1,0 +1,29 @@
+name: Validate GitHub Pages
+
+on:
+  pull_request:
+    branches: [master]
+
+permissions:
+  contents: read
+  pages: read
+
+jobs:
+  build:
+    name: Build Pages
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7.0.1
+        with:
+          lfs: true
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v6.0.0
+
+      - name: Build with Jekyll
+        uses: actions/jekyll-build-pages@v1.0.13
+        with:
+          source: ./
+          destination: ./_site
