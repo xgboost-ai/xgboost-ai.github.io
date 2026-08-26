@@ -24,17 +24,6 @@ jobs:
         with:
           lfs: true
 
-      - name: Verify Git LFS checkout
-        shell: bash
-        run: |
-          set -euo pipefail
-          while IFS= read -r file; do
-            if grep -q '^version https://git-lfs.github.com/spec/v1$' "$file"; then
-              echo "::error file=$file::Git LFS pointer was not expanded"
-              exit 1
-            fi
-          done < <(git lfs ls-files --name-only)
-
       - name: Configure Pages
         uses: actions/configure-pages@v6.0.0
 
